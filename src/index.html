@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Money Tracker</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+<div class="wrapper__container">
+    <header class="header__section">
+        <h1 class="header__title">Money tracker 💸</h1>
+    </header>
+    <main class="main__section">
+        <section class="total-amount__section">
+            <div class="total-balance">
+                <h3 class="total-balance__title">
+                    Total balance
+                </h3>
+                <div class="total-balance-sum">
+                    <p>$ <span class="balance-sum">1000</span></p>
+                </div>
+            </div>
+            <div class="income-expenses__wrapper">
+                <div class="total-income">
+                    <div class="total-income__wrapper expenses__wrapper">
+                        <h4 class="total-income__title total-amount__title">
+                            Total income
+                        </h4>
+                        <div class="arrow-amount-income__wrapper arrow-amount__wrapper">
+                            <svg class="arrow-amount-income arrow-amount" width="11" height="11" viewBox="0 0 8 8"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_2_5)">
+                                    <path d="M4 0V7M4 7L6 5M4 7L2 5" stroke="white" stroke-width="1"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2_5">
+                                        <rect width="8" height="8" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="total-income-sum total-sum">
+                        <p>$ <span class="income-sum">1000</span></p>
+                    </div>
+                </div>
+                <div class="total-expenses">
+                    <div class="total-expenses__wrapper expenses__wrapper">
+                        <div class="arrow-amount-expenses__wrapper arrow-amount__wrapper">
+                            <svg class="arrow-amount-expenses arrow-amount" width="11" height="11" viewBox="0 0 5 8"
+                                 fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.5 7.5L2.5 0.5M2.5 0.5L0.5 2.5M2.5 0.5L4.5 2.5" stroke="white"
+                                      stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="total-expenses__title total-amount__title">
+                            Total expenses
+                        </h4>
+                    </div>
+                    <div class="total-expenses-sum total-sum">
+                        <p>$ <span class="expenses-sum">1000</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="form-transaction__section">
+            <h2 class="form-transaction__title">
+                Add transaction
+            </h2>
+            <form class="transaction-form" id="transaction-form">
+                <div class="transaction__field">
+                    <input type="number" name="amount" class="transaction-form__input"
+                           placeholder="Transaction amount $" min="0" step="0.01" required>
+                    <button type="submit" class="transaction-form__button">Add</button>
+                </div>
+                <fieldset class="form__select">
+                    <legend class="form__title">Select the transaction type</legend>
+
+                    <div class="select__wrapper">
+                        <div class="select__wrapper-income">
+                            <input id="select-income" type="radio" name="transaction-type" value="Income" checked>
+                            <label for="select-income">Income</label>
+                        </div>
+
+                        <div class="select__wrapper-expense">
+                            <input id="select-expenses" type="radio" name="transaction-type" value="Expense">
+                            <label for="select-expenses">Expense</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section class="transaction-history__section">
+            <h2 class="transaction-history__title">
+                Transaction history
+            </h2>
+            <ul class="transaction-history__list">
+                <li class="transaction__element">
+                    <div class="transaction-description">
+                        Transaction type: <span class="transaction-type"></span>
+                    </div>
+                    <span class="transaction-amount"></span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</div>
+</body>
+</html>
